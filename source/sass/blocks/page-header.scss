@@ -1,0 +1,13 @@
+.page-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 878px;
+  padding: 33px 253px 89px;
+  background:
+    url("../img/promo-bg-waves.png") no-repeat 0 0/cover,
+    url("../img/promo-bg-chip.png") no-repeat 1038px 258px,
+    url("../img/rectangles-figure.svg") no-repeat 1030px 118px,
+    linear-gradient(left, $black, $black 100%);
+
+}

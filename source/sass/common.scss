@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "PT Mono";
+  src:
+    url("../fonts/PTMono-Regular.woff2"),
+    url("../fonts/PTMono-Regular.woff");
+  font-weight: nomal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src:
+    url("../fonts/RobotoCondensed-Bold.woff2"),
+    url("../fonts/RobotoCondensed-Bold.woff");
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src:
+    url("../fonts/RobotoCondensed-Regular.woff2"),
+    url("../fonts/RobotoCondensed-Regular.woff");
+  font-weight: nomal;
+  font-display: swap;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+picture {
+  display: block;
+  line-height: 0;
+}
+
+body {
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "PT Mono", "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: normal;
+  text-align: left;
+  color: $black;
+}
+
+main {
+  overflow: hidden;
+}
