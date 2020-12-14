@@ -1,0 +1,45 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 45px;
+  padding: 10px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $white;
+  border: 1px solid $white;
+  border-radius: 5px;
+  background-color: transparent;
+
+  &:visited {
+    color: $white;
+  }
+
+  &:focus,
+  &:hover {
+    border-color: $blue;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &--blue-fill {
+    border: none;
+    background-color: $blue;
+  }
+
+  &--big {
+    width: 407px;
+    height: 55px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
