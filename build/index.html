@@ -16,8 +16,8 @@
   <header class="page-header">
     <div class="page-header__container">
       <div class="page-header__top-info">
-        <a class="logo logo--white" href="index.html" aria-label="Логотип Smart Device">
-          <svg class="logo__icon" width="52" height="52">
+        <a class="logo logo--white logo--reducing" href="index.html" aria-label="Логотип Smart Device">
+          <svg class="logo__icon logo__icon--shrinking" width="52" height="52">
             <use xlink:href="img/sprite_auto.svg#icon-circuit"></use>
           </svg>
           <span class="logo__title">
@@ -27,7 +27,7 @@
             умные технологии
           </span>
         </a>
-        <button class="page-header__toggle-menu" type="button"></button>
+        <button class="page-header__menu-toggle" type="button"></button>
         <ul class="page-header__contact-methods">
           <li>
             <a href="mailto:info@sd.ru" aria-label="написать на почту info@sd.ru"><span>info@sd.ru</span></a>
@@ -54,8 +54,12 @@
         <svg class="page-header__rectangles" width="671" height="641">
           <use xlink:href="img/sprite_auto.svg#icon-rectangles-figure"></use>
         </svg>
-        <!-- 1х: 705px; 2x:515px -->
-        <img class="page-header__chips" src="img/promo-bg-chip.png" alt="набор печатных плат" srcset="img/promo-bg-chip.png 1x, img/promo-bg-chip@2x.png 2x" width="705" height="515">
+        <picture>
+          <source srcset="img/promo-bg-chip.webp 1x, img/promo-bg-chip@2x.webp 2x" type="image/webp">
+          <source srcset="img/promo-bg-chip.png 1x, img/promo-bg-chip@2x.png 2x" type="image/png">
+          <!-- 1х: 705px; 2x:515px -->
+          <img class="page-header__chips" src="img/promo-bg-chip.png" alt="набор печатных плат" srcset="img/promo-bg-chip.png 1x, img/promo-bg-chip@2x.png 2x" width="705" height="515">
+        </picture>
       </div>
         <a class="page-header__scroll-down" href="#">Скролл вниз</a>
     </div>
@@ -101,38 +105,55 @@
       </div>
       <nav class="page-footer__menu">
         <h3>Разделы сайта</h3>
-        <ul class="page-footer__navigation">
-          <li class="page-footer__menulink"><a href="#">О компании</a></li>
-          <li class="page-footer__menulink"><a href="#">Продукты</a></li>
-          <li class="page-footer__menulink"><a href="#">Производство печатных плат</a></li>
-          <li class="page-footer__menulink"><a href="#">Монтаж печатных плат</a></li>
-        </ul>
-        <ul class="page-footer__navigation">
-          <li class="page-footer__menulink"><a href="#">Комплектующие</a></li>
-          <li class="page-footer__menulink"><a href="#">Доставка</a></li>
-          <li class="page-footer__menulink"><a href="#">Контакты</a></li>
-        </ul>
+        <input id="page-footer__accordion-toggle-1" class="page-footer__accordion-toggle" name="footer-menu" type="checkbox">
+        <label for="page-footer__accordion-toggle-1" class="page-footer__accordion-label">
+        </label>
+        <div class="page-footer__info-container">
+          <ul class="page-footer__navigation">
+            <li class="page-footer__menulink"><a href="#">О компании</a></li>
+            <li class="page-footer__menulink"><a href="#">Продукты</a></li>
+            <li class="page-footer__menulink"><a href="#">Производство печатных плат</a></li>
+            <li class="page-footer__menulink"><a href="#">Монтаж печатных плат</a></li>
+          </ul>
+          <ul class="page-footer__navigation">
+            <li class="page-footer__menulink"><a href="#">Комплектующие</a></li>
+            <li class="page-footer__menulink"><a href="#">Доставка</a></li>
+            <li class="page-footer__menulink"><a href="#">Контакты</a></li>
+          </ul>
+        </div>
       </nav>
       <div class="page-footer__office">
         <h3>Наш офис</h3>
-        <p>
-        г. Мытищи, Олимпийский проспект, д.10
-        </p>
-        <ul class="page-footer__phone-links">
-          <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>
-          <li><a href="tel:+79250038767">+7 (925) 003-87-67</a></li>
-          <li><a href="tel:+792692608079">+7 (926) 926-080-79</a></li>
-        </ul>
+        <input id="page-footer__accordion-toggle-2" class="page-footer__accordion-toggle" name="footer-menu" type="checkbox">
+        <label for="page-footer__accordion-toggle-2" class="page-footer__accordion-label">
+        </label>
+        <div class="page-footer__info-container">
+          <p>
+          г. Мытищи, Олимпийский проспект, д.10
+          </p>
+          <ul class="page-footer__phone-links">
+            <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>
+            <li><a href="tel:+79250038767">+7 (925) 003-87-67</a></li>
+            <li><a href="tel:+792692608079">+7 (926) 926-080-79</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="page-footer__copyright-info">
       <div class="page-footer__container">
-        <span class="page-footer__copyright">Все права защищены</span>
-        <span class="page-footer__est">1999-2018 SD Service Devices</span>
-        <span>Условия конфиденциальности</span>
-        <span>Developed by wow studio</span>
+        <div class="page-footer__copyright-main">
+          <span class="page-footer__copyright">Все права защищены</span>
+          <span class="page-footer__copyright-est">1999-2018 SD Service Devices</span>
+          <span>
+            <a href="#">
+              Условия конфиденциальности
+            </a>
+          </span>
+        </div>
+        <div class="page-footer__developed-by">Developed by wow studio</div>
       </div>
     </div>
   </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>

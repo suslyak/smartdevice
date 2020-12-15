@@ -38,6 +38,7 @@
   position: relative;
   width: 100%;
   max-width: 1411px;
+
   @include wrapper;
 }
 
@@ -46,7 +47,7 @@
   display: flex;
   align-items: flex-start;
   min-height: 281px;
-  z-index: 1;
+  z-index: 2;
 
   button {
     margin-top: 3px;
@@ -61,7 +62,7 @@
   }
 }
 
-.page-header__toggle-menu {
+.page-header__menu-toggle {
   position: relative;
   top: 17px;
   width: 37px;
@@ -83,7 +84,7 @@
   }
 
   &:active {
-    opacity: 0.5;
+    opacity: 0.3;
   }
 
   @media (max-width: $tablet-width) {
@@ -99,8 +100,6 @@
   }
 }
 
-
-
 .page-header__contact-methods {
   display: flex;
   flex-wrap: wrap;
@@ -113,8 +112,8 @@
   margin: 0 49px 0 auto;
 
   li {
-    margin-right:88px;
-    margin-bottom:25px;
+    margin-right: 88px;
+    margin-bottom: 25px;
 
     &:last-child {
       margin-right: 0;
@@ -123,6 +122,7 @@
     @media (max-width: $tablet-width) {
       margin-right: 33px;
     }
+
     @media (max-width: $mobile-width) {
       margin-right: 23px;
     }
@@ -156,7 +156,6 @@
         height: 14px;
         margin-right: 20px;
         background: url("../img/icon-envelope.svg") no-repeat 0 0/19px 14px;
-
       }
 
       @media (max-width: $tablet-width) {
@@ -166,9 +165,6 @@
           margin-right: 0;
           background-size: 25px 19px;
         }
-      }
-
-      @media (max-width: $mobile-width) {
       }
     }
 
@@ -181,7 +177,6 @@
         height: 18px;
         margin-right: 16px;
         background: url("../img/icon-phone-call.svg") no-repeat 0 0/18px 18px;
-
       }
 
       @media (max-width: $tablet-width) {
@@ -192,16 +187,11 @@
           background-size: 24px 24px;
         }
       }
-
-      @media (max-width: $mobile-width) {
-      }
     }
 
     @media (max-width: $tablet-width) {
       margin-left: auto;
       margin-right: 0;
-    }
-    @media (max-width: $mobile-width) {
     }
   }
 
@@ -290,10 +280,11 @@
   }
 
   @media (max-width: $tablet-width) {
-      width: 380px;
-      margin: 55px 0 0 48px;
-      z-index: 1;
+    width: 380px;
+    margin: 55px 0 0 48px;
+    z-index: 1;
   }
+
   @media (max-width: $mobile-width) {
     width: 100%;
     margin: 41px 0 0;
@@ -403,21 +394,30 @@
 }
 
 .page-header__scroll-down {
-    display: inline-block;
-    position: absolute;
-    left: -40px;
-    bottom: -148px;
-    margin-top: auto;
-    font-size: 14px;
-    line-height: 16px;
-    color: $white;
-    text-decoration: none;
-    opacity: 0.5;
-    transform: rotate(-90deg);
+  display: inline-block;
+  position: absolute;
+  left: -40px;
+  bottom: -148px;
+  margin-top: auto;
+  font-size: 14px;
+  line-height: 16px;
+  color: $white;
+  text-decoration: none;
+  opacity: 0.5;
+  transform: rotate(-90deg);
 
-    &:visited {
-      color: $white;
-    }
+  &:visited {
+    color: $white;
+  }
+
+  &:focus,
+  &:hover {
+    color: $blue;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   @media (max-width: $tablet-width) {
     display: none;
