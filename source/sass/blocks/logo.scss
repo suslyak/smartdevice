@@ -3,27 +3,24 @@
   position: relative;
   flex-shrink: 0;
   top: 10px;
-  width: 202px;
+  width: 220px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-weight: bold;
-  font-size: 25px;
-  line-height: 20px;
-  color: $white;
   text-decoration: none;
 
   &:visited {
-    color: $white;
+    color: $black;
 
     span:not(:first-of-type) {
       color: $slate-grey;
     }
   }
 
-  span:not(:first-of-type) {
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.75px;
-    color: $slate-grey;
+  &--white {
+    color: $white;
+
+    &:visited {
+      color: $white;
+    }
   }
 
   @media (max-width: $mobile-width) {
@@ -46,4 +43,17 @@
     width: 38px;
     height: 38px;
   }
+}
+
+.logo__title {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 20px;
+}
+
+.logo__slogan {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.75px;
+  color: $slate-grey;
 }

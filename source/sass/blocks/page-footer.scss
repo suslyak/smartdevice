@@ -1,0 +1,168 @@
+.page-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: auto;
+  padding: 65px 0 0;
+  color: $black;
+  background-color: $white;
+  overflow: hidden;
+
+  @media (max-width: $tablet-width) {
+    padding: 20px 25px 0;
+  }
+
+  @media (max-width: $mobile-width) {
+
+    padding: 46px 15px 0;
+  }
+}
+
+.page-footer__container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 1414px;
+  @include wrapper;
+}
+
+.page-footer__head-block {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.page-footer__est {
+  display: none;
+
+  @media (max-width: $tablet-width) {
+    display: inline;
+  }
+
+  @media (max-width: $mobile-width) {
+
+  }
+}
+
+.page-footer__social-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include clear-ul;
+  margin-top: 54px;
+
+  li {
+    margin-right: 15px;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    @include actions-op;
+  }
+
+  @media (max-width: $tablet-width) {
+
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    position: relative;
+    left: 4px;
+    top: 0;
+    margin-top: 30px;
+  }
+}
+
+.page-footer__menu {
+  flex-grow: 1;
+}
+
+.page-footer__menu,
+.page-footer__office {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  h3 {
+    width: 100%;
+    margin: 0 0 10px;
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $black;
+  }
+
+  p {
+    width: 100%;
+    margin: 3px 0 0;
+  }
+}
+
+.page-footer__office {
+  width: 23.8%;
+}
+
+.page-footer__navigation {
+  width: 34%;
+  display: flex;
+  flex-grow: 0.4;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: $black--Op;
+
+  @include clear-ul;
+}
+
+.page-footer__menulink {
+  font-size: 15px;
+  line-height: 25px;
+  opacity: 0.5;
+
+  width: calc(100% - 20px);
+  margin-right: 20px;
+
+  a {
+    color: $black--Op;
+    text-decoration: none;
+
+    &:visited {
+      color: $black--Op;
+    }
+  }
+}
+
+.page-footer__office {
+  font-size: 15px;
+  line-height: 25px;
+  color: $black--Op;
+}
+
+.page-footer__phone-links {
+  @include clear-ul;
+
+  a {
+    color: $black--Op;
+    text-decoration: none;
+
+    &:visited {
+      color: $black--Op;
+    }
+  }
+}
+
+.page-footer__copyright-info {
+  width: 100%;
+  padding: 14px 0;
+  color: $black--Op;
+  border-top: 1px solid $border-concrete;
+}
