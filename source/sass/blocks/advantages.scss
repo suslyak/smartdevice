@@ -1,0 +1,140 @@
+.advantages {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 112px 60px 96px;
+  z-index: 1;
+
+  @media (max-width: $tablet-width) {
+    padding: 54px 25px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 37px 15px 60px;
+  }
+}
+
+.advantages__advantages-list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1170px;
+
+  @include clear-ul;
+  @include wrapper;
+
+  @media (max-width: $mobile-width) {
+    flex-direction: column;
+  }
+}
+
+.advantages__advantages-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: calc((100% - 30px) / 2);
+  min-height: 299px;
+  margin-right: 30px;
+  margin-top: 30px;
+  padding: 39px 43px;
+  font-size: 16px;
+  line-height: 22px;
+  color: $dim-gray;
+  text-decoration: none;
+  background-color: $white;
+  border-top: 1px solid $gray-smoke;
+  border-right: 1px solid $gray-smoke;
+  border-bottom: 1px solid $gray-smoke;
+  border-left: 2px solid $blue;
+
+  &:hover {
+    color: $white;
+    background-color: $blue;
+    border-top: 1px solid $blue;
+    border-right: 1px solid $blue;
+    border-bottom: 1px solid $blue;
+
+    h3 {
+      color: $white;
+    }
+
+    svg {
+      stroke: $white;
+    }
+  }
+
+  @media (min-width: $mobile-width + 1) {
+    &:nth-child(2n+2) {
+      margin-right: 0;
+    }
+
+    &:nth-child(-n+2) {
+      margin-top: 0;
+    }
+  }
+
+  h3 {
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 34px;
+    margin: 21px 0 0;
+    color: $blue;
+  }
+
+  p {
+    margin: 15px 0;
+  }
+
+  br {
+    display: none;
+  }
+
+  @media (max-width: $tablet-width) {
+    min-height: 232px;
+    padding: 24px 20px 12px 25px;
+
+    h3 {
+      margin-top: 7px;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    svg {
+      position: relative;
+      top: -3px;
+      left: -1px;
+      transform: scale(0.94);
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 17px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    h3 {
+      width: 97%;
+      font-size: 20px;
+      line-height: 28px;
+      margin-top: 12px;
+    }
+
+    p {
+      letter-spacing: -0.03em;
+    }
+
+    br {
+      display: block;
+    }
+  }
+}
