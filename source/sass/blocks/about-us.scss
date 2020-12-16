@@ -1,0 +1,129 @@
+.about-us {
+  display: flex;
+  padding: 37px 60px 48px;
+  width: 100%;
+  max-width: 1287px;
+  color: $dim-gray;
+
+  @include wrapper;
+
+  img {
+    margin-top: 33px;
+    margin-right: 63px;
+    flex-shrink: 0;
+  }
+
+  h2 {
+    margin: 20px 0;
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 51px;
+  }
+
+  p {
+    margin: 21px 0;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  a {
+    margin-top: 38px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 10px 25px 48px;
+
+    h2 {
+      margin: 20px 0 0;
+      font-size: 32px;
+      line-height: 45px;
+    }
+
+    a {
+      margin-top: 42px;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 27px 15px 30px;
+
+    h2 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 39px;
+    }
+
+    p {
+      margin: 19px 0 40px;
+    }
+
+    a {
+      margin-top: 26px;
+    }
+  }
+}
+
+.about-us__est {
+  position: relative;
+  width: 115px;
+  min-height: 305px;
+  flex-shrink: 0;
+  margin-top: 33px;
+  margin-right: 63px;
+
+  background: url("../img/2005.png") no-repeat 0 0;
+
+  @media (min-resolution: $retina-dppx) {
+    background-image: url("../img/2005@2x.png");
+    background-size: 115px 305px;
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 131px;
+    min-height: 347px;
+    margin-top: 27px;
+    margin-right: 57px;
+
+    background-image: url("../img/2005-tablet.png");
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/2005-tablet@2x.png");
+      background-size: 131px 347px;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.about-us__text {
+  position: relative;
+
+  @media (max-width: $tablet-width) {
+    p {
+      &:last-of-type {
+        display: inline;
+      }
+    }
+
+    &--short {
+      max-height: 220px;
+      overflow: hidden;
+
+      &::after {
+        content: "..";
+        position: relative;
+        left: -1em;
+      }
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    &--short {
+      max-height: 370px;
+      overflow: hidden;
+    }
+  }
+}

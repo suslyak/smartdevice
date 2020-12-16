@@ -2,15 +2,15 @@
   position: relative;
   display: flex;
   width: 100%;
-  padding: 112px 60px 96px;
+  padding: 112px 60px 48px;
   z-index: 1;
 
   @media (max-width: $tablet-width) {
-    padding: 54px 25px;
+    padding: 54px 25px 27px;
   }
 
   @media (max-width: $mobile-width) {
-    padding: 37px 15px 60px;
+    padding: 37px 15px 30px;
   }
 }
 
@@ -86,6 +86,7 @@
   }
 
   p {
+    width: 100%;
     margin: 15px 0;
   }
 

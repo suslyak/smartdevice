@@ -29,12 +29,33 @@
   }
 
   &:active {
-    opacity: 0.5;
+    opacity: 0.3;
+  }
+
+  &--blue {
+    color: $blue;
+    border-color: $blue;
+
+    &:visited {
+      color: $blue;
+    }
+
+    &:focus,
+    &:hover {
+      color: $white;
+      border: none;
+      background-color: $blue;
+    }
   }
 
   &--blue-fill {
     border: none;
     background-color: $blue;
+
+    &:focus,
+    &:hover {
+      opacity: 0.6;
+    }
   }
 
   &--big {
