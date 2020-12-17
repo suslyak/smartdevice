@@ -113,6 +113,7 @@
   padding: 30px 43px;
   text-decoration: none;
   z-index: 2;
+  color: $white;
 
   &:visited {
     color: $white;
@@ -120,6 +121,15 @@
     h3 {
       color: $white;
     }
+  }
+
+  &:focus,
+  &:hover {
+    border: 1px solid $blue;
+  }
+
+  &:active {
+    opacity: 0.3;
   }
 
   &::before {
