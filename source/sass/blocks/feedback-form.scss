@@ -99,10 +99,12 @@
       width: 100%;
       margin: 0 0 24px;
     }
+  }
+}
 
-    fieldset {
-      margin-top: 15px;
-    }
+.feedback-form__fieldset {
+  @media (max-width: $mobile-width) {
+    margin-top: 15px;
   }
 }
 

@@ -117,7 +117,7 @@
           <p>
             Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с&nbsp;1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.
           </p>
-          <p class="kaki">
+          <p>
             Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.
           </p>
         </div>
@@ -177,6 +177,7 @@
           <picture>
             <source srcset="img/paper_airplane.webp 1x, img/paper_airplane@2x.webp 2x" type="image/webp">
             <source srcset="img/paper_airplane.png 1x, img/paper_airplane@2x.png 2x" type="image/png">
+            <!-- 1х: 511px; 2x:1022px -->
             <img src="img/paper_airplane.png" alt="бумажный самолёт" srcset="img/paper_airplane.png 1x, img/paper_airplane@2x.png 2x" width="511" height="288">
           </picture>
           <svg class="feedback__rectangles" width="671" height="641">
@@ -188,14 +189,14 @@
           <p>
             Мы проконсультируем Вас бесплатно
           </p>
-          <fieldset class="formfields feedback-form__fieldset">
+          <div class="formfields feedback-form__fieldset">
             <label for="name" class="visually-hidden">Имя</label>
             <input class="form-input" type="text" name="name" placeholder="Имя" required="">
             <label id="name" class="visually-hidden" for="phone">Телефон</label>
             <input class="form-input" id="phone" type="tel" name="phone" pattern="^[0-9-\s()]*$" placeholder="Телефон" value="" required="">
             <label class="visually-hidden" for="message">Вы можете задать вопрос</label>
             <textarea class="form-input" id="message" name="message" rows="3" placeholder="Ваш вопрос"></textarea>
-          </fieldset>
+          </div>
           <button class="button" type="submit">Задать вопрос</button>
           <div class="checkbox feedback-form__checkbox">
             <input id="agree" name="i-agree" type="checkbox" value="i-agree" checked="">
