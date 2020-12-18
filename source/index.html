@@ -191,11 +191,11 @@
           </p>
           <div class="formfields feedback-form__fieldset">
             <label for="name" class="visually-hidden">Имя</label>
-            <input class="form-input" type="text" name="name" placeholder="Имя" required>
+            <input type="text" name="name" placeholder="Имя" required>
             <label id="name" class="visually-hidden" for="phone">Телефон</label>
-            <input class="form-input" id="phone" type="tel" name="phone" pattern="^[0-9-\s()]*$" placeholder="Телефон" value="" required>
+            <input id="phone" type="tel" name="phone" pattern="^[0-9-\s()]*$" placeholder="Телефон" value="" required>
             <label  class="visually-hidden" for="message">Вы можете задать вопрос</label>
-            <textarea class="form-input" id="message" name="message" rows="3" placeholder="Ваш вопрос"></textarea>
+            <textarea id="message" name="message" rows="3" placeholder="Ваш вопрос"></textarea>
           </div>
           <button class="button" type="submit">Задать вопрос</button>
           <div class="checkbox feedback-form__checkbox">
@@ -204,7 +204,6 @@
           </div>
         </form>
       </div>
-
     </section>
   </main>
   <footer class="page-footer">
@@ -297,6 +296,34 @@
       </div>
     </div>
   </footer>
+  <template id="popup">
+    <div class="modal">
+      <div class="modal__content">
+        <span class="modal__content modal__close"></span>
+      </div>
+    </div>
+  </template>
+  <template id="request-call">
+    <form action="#" method="post" class="request-call-form">
+      <h3>Закажите звонок</h3>
+      <p>
+        Оставьте контакты, мы проконсультируем вас&nbsp;бесплатно в удобное время
+      </p>
+      <div class="formfields request-call-form__fieldset">
+        <label for="call-me-name" class="visually-hidden">Имя</label>
+        <input type="text" name="call-me-name" placeholder="Имя" required>
+        <label class="visually-hidden" for="call-me-phone">Телефон</label>
+        <input id="call-me-phone" type="tel" name="call-me-phone" pattern="^[0-9-\s()]*$" placeholder="Телефон" value="" required>
+        <label class="visually-hidden" for="call-me-message">Вы можете задать вопрос</label>
+        <textarea id="call-me-message" name="call-me-message" rows="3" placeholder="Ваш вопрос"></textarea>
+      </div>
+      <button class="button" type="submit">Отправить</button>
+      <div class="checkbox request-call-form__checkbox">
+        <input id="call-me-agree" name="call-me-agree" type="checkbox" value="i-agree" checked>
+        <label for="call-me-agree">Я согласен на обработку  персональных данных</label>
+      </div>
+    </form>
+  </template>
   <script src="js/main.js"></script>
   <script src="js/vendor.js"></script>
 </body>

@@ -1,0 +1,53 @@
+.modal {
+  position: fixed;
+  width: 490px;
+  min-width: 290px;
+  padding: 30px 40px 45px;
+  z-index: 100;
+
+  &--blue {
+    background-color: $blue;
+  }
+
+  &--show {
+    display: block;
+
+    @media (min-width: $mobile-width + 1) {
+      animation-name: bounce;
+      animation-duration: 0.5s;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    max-width: 490px;
+    padding: 20px 40px 25px;
+  }
+}
+
+.modal__content {
+  position: relative;
+}
+
+.modal__close {
+  position: absolute;
+  right: -20px;
+  top: -10px;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  background: url("../img/icon-close.svg") no-repeat;
+  z-index: 1;
+
+  @media (max-width: $mobile-width) {
+    right: -20px;
+    top: -5px;
+  }
+}
+
+@keyframes bounce {
+	0% {transform: translateY(-3000px);}
+	70% {transform: translateY(40px);}
+	90% {transform: translateY(-15px);}
+	100% {transform: translateY(0);}
+}
