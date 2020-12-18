@@ -1,0 +1,71 @@
+.feedback {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 670px;
+  padding: 90px 60px 110px;
+  background: url("../img/triangles.svg") no-repeat 960px 34px $blue;
+  z-index: 1;
+
+  form {
+    position: relative;
+    width: 49%;
+    margin-left: auto;
+    padding-left: 4px;
+    flex-shrink: 0;
+    z-index: 2;
+  }
+
+  @media (max-width: $tablet-width) {
+    min-height: 600px;
+    padding: 80px 90px 104px;
+    justify-content: center;
+
+    form {
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 31px 15px 50px;
+  }
+}
+
+.feedback__container {
+  width: 100%;
+  max-width: 1170px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  @include wrapper;
+}
+
+.feedback__promo {
+  position: relative;
+  width: 44%;
+  flex-shrink: 1;
+
+  img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 70px;
+    left: -25px;
+    z-index: 1;
+  }
+
+  svg {
+    position: absolute;
+    width: 130%;
+    height: auto;
+    top: -150px;
+    left: -200px;
+    z-index: 0;
+  }
+
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}

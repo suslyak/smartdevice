@@ -1,0 +1,53 @@
+.formfields {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  input {
+    display: flex;
+    height: 51px;
+    align-items: center;
+    font-size: 16px;
+    line-height: 22px;
+    color: $white;
+    background-color: $white-Op10;
+    border: 1px solid $blue;
+    outline: none;
+
+    &:hover {
+      background-color: $black--Op;
+    }
+
+    &:focus {
+      border-color: $white;
+    }
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    background-color: $white-Op10;
+    border: 1px solid $blue;
+    outline: none;
+    resize: none;
+
+    &:hover {
+      background-color: $black--Op;
+    }
+
+    &:focus {
+      border-color: $white;
+    }
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+}

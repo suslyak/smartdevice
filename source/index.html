@@ -134,7 +134,7 @@
                 <source srcset="img/1n.webp 1x, img/1n@2x.webp 2x" type="image/webp">
                 <source srcset="img/1n.png 1x, img/1n@2x.png 2x" type="image/png">
                 <!-- 1х: 2141px; 2x:4282px -->
-                <img src="img/1n.png" alt="чип приваривается к плате" srcset="img/1n.png 1x, img/1n@2x.png 2x" width="2141" height="1428">
+                <img src="img/1n.png" alt="печатная плата на конвеере" srcset="img/1n.png 1x, img/1n@2x.png 2x" width="2141" height="1428">
               </picture>
             </div>
             <a href="#" class="services__service">
@@ -169,6 +169,41 @@
           </li>
         </ul>
       </div>
+    </section>
+    <section class="feedback">
+      <div class="feedback__container">
+        <h2 class="visually-hidden">Обратная связь</h2>
+        <div class="feedback__promo">
+          <picture>
+            <source srcset="img/paper_airplane.webp 1x, img/paper_airplane@2x.webp 2x" type="image/webp">
+            <source srcset="img/paper_airplane.png 1x, img/paper_airplane@2x.png 2x" type="image/png">
+            <img src="img/paper_airplane.png" alt="бумажный самолёт" srcset="img/paper_airplane.png 1x, img/paper_airplane@2x.png 2x" width="511" height="288">
+          </picture>
+          <svg class="feedback__rectangles" width="671" height="641">
+            <use xlink:href="img/sprite_auto.svg#icon-rectangles-figure"></use>
+          </svg>
+        </div>
+        <form class="feedback-form" action="#">
+          <h3>Остались вопросы? Задайте их&nbsp;нам!</h3>
+          <p>
+            Мы проконсультируем Вас бесплатно
+          </p>
+          <fieldset class="formfields feedback-form__fieldset">
+            <label for="name" class="visually-hidden">Имя</label>
+            <input class="form-input" type="text" name="name" placeholder="Имя" required>
+            <label id="name" class="visually-hidden" for="phone">Телефон</label>
+            <input class="form-input" id="phone" type="tel" name="phone" pattern="^[0-9-\s()]*$" placeholder="Телефон" value="" required>
+            <label  class="visually-hidden" for="message">Вы можете задать вопрос</label>
+            <textarea class="form-input" id="message" name="message" rows="3" placeholder="Ваш вопрос"></textarea>
+          </fieldset>
+          <button class="button" type="submit">Задать вопрос</button>
+          <div class="checkbox feedback-form__checkbox">
+            <input id="agree" name="i-agree" type="checkbox" value="i-agree" checked>
+            <label for="agree">Я согласен на обработку  персональных данных</label>
+          </div>
+        </form>
+      </div>
+
     </section>
   </main>
   <footer class="page-footer">
