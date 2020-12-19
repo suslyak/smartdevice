@@ -24,6 +24,8 @@ gulp.task("css", function () {
     .pipe(sass())
     .pipe(postcss([postcssImport()]))
     .pipe(postcss([ autoprefixer() ]))
+    .pipe(rename("style.css"))
+    .pipe(gulp.dest("build/css"))
     .pipe(csso())
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
