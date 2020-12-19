@@ -61,11 +61,11 @@
           <img src="img/promo-bg-chip.png" alt="набор печатных плат" srcset="img/promo-bg-chip.png 1x, img/promo-bg-chip@2x.png 2x" width="705" height="515">
         </picture>
       </div>
-        <a class="page-header__scroll-down" href="#">Скролл вниз</a>
+        <a class="page-header__scroll-down" href="#advantages">Скролл вниз</a>
     </div>
   </header>
   <main class="page-content">
-    <section class="advantages">
+    <section id="advantages" class="advantages">
       <h2 class="visually-hidden">
         Наши преимущества
       </h2>
@@ -170,7 +170,7 @@
         </ul>
       </div>
     </section>
-    <section class="feedback">
+    <section id="feedback" class="feedback">
       <div class="feedback__container">
         <h2 class="visually-hidden">Обратная связь</h2>
         <div class="feedback__promo">
@@ -191,11 +191,11 @@
           </p>
           <div class="formfields feedback-form__fieldset">
             <label for="name" class="visually-hidden">Имя</label>
-            <input type="text" name="name" placeholder="Имя" required="">
+            <input type="text" name="name" placeholder="Имя" required="" custom-required="true">
             <label id="name" class="visually-hidden" for="phone">Телефон</label>
-            <input id="phone" type="tel" name="phone" pattern="^[0-9-\s()]*$" placeholder="Телефон" value="" required="">
+            <input id="phone" type="tel" name="phone" pattern="^[0-9-\s()+]*$" placeholder="Телефон" value="" required="" custom-required="true">
             <label class="visually-hidden" for="message">Вы можете задать вопрос</label>
-            <textarea id="message" name="message" rows="3" placeholder="Ваш вопрос"></textarea>
+            <textarea id="message" name="message" rows="3" placeholder="Ваш вопрос" required="" custom-required="true"></textarea>
           </div>
           <button class="button" type="submit">Задать вопрос</button>
           <div class="checkbox feedback-form__checkbox">
@@ -324,7 +324,7 @@
       </div>
     </form>
   </template>
-  <script src="js/main.js"></script>
   <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
