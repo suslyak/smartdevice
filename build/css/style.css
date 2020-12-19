@@ -1274,6 +1274,7 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 210px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   list-style: none;
@@ -1758,7 +1759,7 @@ template {
         padding-left: 0; } }
 @media (max-width: 767px) {
     .feedback {
-      padding: 31px 15px 50px; } }
+      padding: 31px 15px 48px; } }
 .feedback__container {
   width: 100%;
   max-width: 1170px;

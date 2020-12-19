@@ -98,6 +98,7 @@
 
 .page-footer__social-links {
   display: flex;
+  max-width: 210px;
   flex-wrap: wrap;
 
   @include clear-ul;

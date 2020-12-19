@@ -35,7 +35,7 @@
             <a href="tel:+74950005252" aria-label="позвонить на телефон +74950005252"><span>+7 (495) 000 52 52</span></a>
           </li>
         </ul>
-        <button class="button page-header__request-call">Заказать звонок</button>
+        <button class="button page-header__request-call" aria-label="заказ звонка">Заказать звонок</button>
       </div>
       <div class="page-header__info">
         <h2>Печатные платы</h2>
@@ -46,7 +46,7 @@
             </p>
           </li>
         </ul>
-        <a class="button button--big button--blue-fill page-header__promo-button" href="#feedback" role="button">
+        <a class="button button--big button--blue-fill page-header__promo-button" href="#feedback" role="button" aria-label="Получить консультацию">
           <span>Получить бесплатную консультацию</span>
           <span>Бесплатная консультация</span>
         </a>
@@ -64,6 +64,7 @@
     </div>
   </header>
   <main class="page-content">
+    <h1 class="visually-hidden">Производство и монтаж печатных плат на заказ</h1>
     <section id="advantages" class="advantages">
       <h2 class="visually-hidden">
         Наши преимущества
@@ -75,7 +76,7 @@
           </svg>
           <h3>Оперативные сроки</h3>
           <p>
-            Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки
+            Усовершенствованная логистическая система позволяет нам просчитывать&nbsp;стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки
           </p>
         </li>
         <li class="advantages__advantages-list-item">
@@ -120,7 +121,7 @@
             Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.
           </p>
         </div>
-        <a href="#" class="button button--blue">Подробнее</a>
+        <a href="#" class="button button--blue" aria-label="Читать подробнее">Подробнее</a>
       </div>
     </section>
     <section class="services">
@@ -196,7 +197,7 @@
             <label for="message" class="visually-hidden" >Вы можете задать вопрос</label>
             <textarea id="message" name="message" rows="3" placeholder="Ваш вопрос" required custom-required="true"></textarea>
           </div>
-          <button class="button" type="submit">Задать вопрос</button>
+          <button class="button" type="submit" aria-label="Отправить вопрос">Задать вопрос</button>
           <div class="checkbox feedback-form__checkbox">
             <input id="agree" name="i-agree" type="checkbox" value="i-agree" checked>
             <label for="agree">Я согласен на обработку  персональных данных</label>
@@ -311,7 +312,7 @@
           <label class="visually-hidden" for="call-me-message">Вы можете задать вопрос</label>
           <textarea id="call-me-message" name="call-me-message" rows="3" placeholder="Ваш вопрос" required custom-required="true"></textarea>
         </div>
-        <button class="button" type="submit">Отправить</button>
+        <button class="button" type="submit" aria-label="Отправить запрос">Отправить</button>
         <div class="checkbox request-call-form__checkbox">
           <input id="call-me-agree" name="call-me-agree" type="checkbox" value="i-agree" checked>
           <label for="call-me-agree">Я согласен на обработку  персональных данных</label>
@@ -319,7 +320,7 @@
       </form>
     </div>
   </div>
-  <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/vendor.js"></script>
 </body>
 </html>
