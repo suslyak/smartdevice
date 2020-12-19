@@ -115,7 +115,7 @@
     var inputs = form.querySelectorAll('input, textarea');
     inputs.forEach(function (input) {
       if (storage) {
-        input.value = storage[input.name];
+        input.value = storage[input.name] ? storage[input.name] : '';
       }
 
       if (input.hasAttribute('custom-required')) {
