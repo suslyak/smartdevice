@@ -1,13 +1,9 @@
-/*!
- * @copyright Copyright (c) 2017 IcoMoon.io
- * @license   Licensed under MIT license
- *            See https://github.com/Keyamoon/svgxuse
- * @version   1.2.6
- */
-/*jslint browser: true */
-/*global XDomainRequest, MutationObserver, window */
+
 (function () {
   "use strict";
+  /* Полифилы для IE - начало */
+
+  //svgxuse https://github.com/Keyamoon/svgxuse
   if (typeof window !== "undefined" && window.addEventListener) {
       var cache = Object.create(null); // holds xhr objects to prevent multiple requests
       var checkUseElems;
@@ -228,6 +224,21 @@
       }
   }
 
+
+  //полифил для forEach в IE11
+  if (typeof window !== 'undefined' && window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = function (callback, thisArg) {
+      thisArg = thisArg || window;
+      for (var i = 0; i < this.length; i++) {
+        callback.call(thisArg, this[i], i, this);
+      }
+    };
+  }
+
+  /* Полифилы для IE - конец */
+
+
+  //Плавный скролл - просто с JSFiddle
   function getElementY(query) {
     return window.pageYOffset + document.querySelector(query).getBoundingClientRect().top;
   }
@@ -265,6 +276,7 @@
     })
   }
 
+  //Маска для телефона - просто с JSFiddle
   window.addEventListener("DOMContentLoaded", function() {
     [].forEach.call( document.querySelectorAll('input[type="tel"'), function(input) {
     var keyCode;

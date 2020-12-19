@@ -8,11 +8,9 @@
 
   var pageHeader = document.querySelector('.page-header');
   var aboutUs = document.querySelector('.about-us');
-  var textToCut = aboutUs.querySelector('.about-us__text');
   var scrollDown = pageHeader.querySelector('.page-header__scroll-down');
   var promoButton = pageHeader.querySelector('.page-header__promo-button');
   var feedbackForm = document.querySelector('.feedback-form');
-  var phoneInput = feedbackForm.querySelector('input[type="tel"]');
   var formSubmitButton = feedbackForm.querySelector('button[type="submit"]');
   var requestCallButton = pageHeader.querySelector('.page-header__request-call');
   var popup = document.querySelector('.modal');
@@ -29,27 +27,6 @@
     storage = localStorage;
   } catch (err) {
     isStorageSupport = false;
-  }
-
-  //полифил для forEach в IE11
-  if (typeof window !== 'undefined' && window.NodeList && !NodeList.prototype.forEach) {
-    NodeList.prototype.forEach = function (callback, thisArg) {
-      thisArg = thisArg || window;
-      for (var i = 0; i < this.length; i++) {
-        callback.call(thisArg, this[i], i, this);
-      }
-    };
-  }
-
-  //полифил-заглушка для reportValidity в IE11
-  if (!HTMLInputElement.prototype.reportValidity) {
-    HTMLInputElement.prototype.reportValidity = function () {
-      if (this.checkValidity()) {
-        return true;
-      } else {
-        return false;
-      }
-    };
   }
 
   var keyHandler = function (event, key, action) {
@@ -149,7 +126,9 @@
 
       validity *= input.checkValidity();
 
-      input.reportValidity();
+      if (HTMLInputElement.prototype.reportValidity) {
+        input.reportValidity();
+      }
     });
 
     return validity;
