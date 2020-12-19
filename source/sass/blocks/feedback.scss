@@ -40,6 +40,10 @@
   justify-content: flex-start;
 
   @include wrapper;
+
+  @media (max-width: $mobile-width) {
+    max-width: 500px;
+  }
 }
 
 .feedback__promo {

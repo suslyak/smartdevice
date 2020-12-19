@@ -27,7 +27,6 @@
             умные технологии
           </span>
         </a>
-        <button class="page-header__menu-toggle" type="button"></button>
         <ul class="page-header__contact-methods">
           <li>
             <a href="mailto:info@sd.ru" aria-label="написать на почту info@sd.ru"><span>info@sd.ru</span></a>
@@ -76,7 +75,7 @@
           </svg>
           <h3>Оперативные сроки</h3>
           <p>
-            Усовершенствованная логистическая система позволяет нам <br>просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки
+            Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки
           </p>
         </li>
         <li class="advantages__advantages-list-item">
@@ -191,10 +190,10 @@
           </p>
           <div class="formfields feedback-form__fieldset">
             <label for="name" class="visually-hidden">Имя</label>
-            <input type="text" name="name" placeholder="Имя" required="" custom-required="true">
-            <label id="name" class="visually-hidden" for="phone">Телефон</label>
+            <input id="name" type="text" name="name" placeholder="Имя" required="" custom-required="true">
+            <label for="phone" class="visually-hidden">Телефон</label>
             <input id="phone" type="tel" name="phone" pattern="^[0-9-\s()+]*$" placeholder="Телефон" value="" required="" custom-required="true">
-            <label class="visually-hidden" for="message">Вы можете задать вопрос</label>
+            <label for="message" class="visually-hidden">Вы можете задать вопрос</label>
             <textarea id="message" name="message" rows="3" placeholder="Ваш вопрос" required="" custom-required="true"></textarea>
           </div>
           <button class="button" type="submit">Задать вопрос</button>
@@ -296,34 +295,30 @@
       </div>
     </div>
   </footer>
-  <template id="popup">
-    <div class="modal">
-      <div class="modal__content">
-        <span class="modal__content modal__close"></span>
-      </div>
+  <div class="modal modal--blue">
+    <div class="modal__content">
+      <span class="modal__content modal__close"></span>
+      <form action="#" method="post" class="request-call-form">
+        <h3>Закажите звонок</h3>
+        <p>
+          Оставьте контакты, мы проконсультируем вас&nbsp;бесплатно в удобное время
+        </p>
+        <div class="formfields request-call-form__fieldset">
+          <label for="call-me-name" class="visually-hidden">Имя</label>
+          <input id="call-me-name" type="text" name="call-me-name" placeholder="Имя" required="" custom-required="true">
+          <label for="call-me-phone" class="visually-hidden">Телефон</label>
+          <input id="call-me-phone" type="tel" name="call-me-phone" pattern="^[0-9-\s()+]*$" placeholder="Телефон" value="" required="" custom-required="true">
+          <label class="visually-hidden" for="call-me-message">Вы можете задать вопрос</label>
+          <textarea id="call-me-message" name="call-me-message" rows="3" placeholder="Ваш вопрос" required="" custom-required="true"></textarea>
+        </div>
+        <button class="button" type="submit">Отправить</button>
+        <div class="checkbox request-call-form__checkbox">
+          <input id="call-me-agree" name="call-me-agree" type="checkbox" value="i-agree" checked="">
+          <label for="call-me-agree">Я согласен на обработку  персональных данных</label>
+        </div>
+      </form>
     </div>
-  </template>
-  <template id="request-call">
-    <form action="#" method="post" class="request-call-form">
-      <h3>Закажите звонок</h3>
-      <p>
-        Оставьте контакты, мы проконсультируем вас&nbsp;бесплатно в удобное время
-      </p>
-      <div class="formfields request-call-form__fieldset">
-        <label for="call-me-name" class="visually-hidden">Имя</label>
-        <input type="text" name="call-me-name" placeholder="Имя" required="">
-        <label class="visually-hidden" for="call-me-phone">Телефон</label>
-        <input id="call-me-phone" type="tel" name="call-me-phone" pattern="^[0-9-\s()]*$" placeholder="Телефон" value="" required="">
-        <label class="visually-hidden" for="call-me-message">Вы можете задать вопрос</label>
-        <textarea id="call-me-message" name="call-me-message" rows="3" placeholder="Ваш вопрос"></textarea>
-      </div>
-      <button class="button" type="submit">Отправить</button>
-      <div class="checkbox request-call-form__checkbox">
-        <input id="call-me-agree" name="call-me-agree" type="checkbox" value="i-agree" checked="">
-        <label for="call-me-agree">Я согласен на обработку  персональных данных</label>
-      </div>
-    </form>
-  </template>
+  </div>
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
 </body>

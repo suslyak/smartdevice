@@ -57,6 +57,10 @@
   justify-content: flex-start;
 
   @include wrapper;
+
+  @media (max-width: $mobile-width) {
+    max-width: 480px;
+  }
 }
 
 .services__services-list {

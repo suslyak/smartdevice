@@ -14,15 +14,22 @@
   var feedbackForm = document.querySelector('.feedback-form');
   var phoneInput = feedbackForm.querySelector('input[type="tel"]');
   var formSubmitButton = feedbackForm.querySelector('button[type="submit"]');
-  var customSubmitValidations = [];
-  var requestCallFormTemplate = document.querySelector('#request-call')
-      .content
-      .querySelector('.request-call-form');
   var requestCallButton = pageHeader.querySelector('.page-header__request-call');
-  var popupTemplate = document.querySelector('#popup')
-      .content
-      .querySelector('.modal');
+  var popup = document.querySelector('.modal');
+  var popupForm = popup.querySelector('.request-call-form');
+  var popupFormSubmitButton = popup.querySelector('button[type="submit"]');
+  var popupFocusField = popup.querySelector('input[name="call-me-name"]');
+  var closeX = popup.querySelector('.modal__close');
+  var customSubmitValidations = [];
 
+  var isStorageSupport = true;
+  var storage = '';
+
+  try {
+    storage = localStorage;
+  } catch (err) {
+    isStorageSupport = false;
+  }
 
   //полифил для forEach в IE11
   if (typeof window !== 'undefined' && window.NodeList && !NodeList.prototype.forEach) {
@@ -60,23 +67,29 @@
     window.removeEventListener('keydown', escKeyHandler);
   };
 
-  var openPopupHandler = function (template, mod) {
-    showPopup(template, mod);
+  var openPopupHandler = function () {
+    showPopup();
+    popupFocusField.focus();
     window.addEventListener('keydown', escKeyHandler);
   };
 
-  var showPopup = function (template, mod) {
+  var showPopup = function () {
     var overlay = document.createElement('div');
 
     overlay.classList.add('overlay');
+    overlay.addEventListener('click', closePopupHandler);
 
-    document.querySelector('body').appendChild(createPopup(template, mod));
     document.querySelector('body').classList.add('modal-open');
+
+    if (popup) {
+      popup.classList.add('modal--show');
+      popupFocusField.focus();
+    }
+
     document.querySelector('body').appendChild(overlay);
   };
 
   var closePopup = function () {
-    var popup = document.querySelector('.modal');
     var overlay = document.querySelector('.overlay');
 
     if (overlay) {
@@ -84,22 +97,9 @@
     }
 
     if (popup) {
-      popup.remove();
+      popup.classList.remove('modal--show');
       document.querySelector('body').classList.remove('modal-open');
     }
-  };
-
-  var createPopup = function (template, mod) {
-    var content = template.cloneNode(true);
-    var popup = popupTemplate.cloneNode(true);
-    var closeX = popup.querySelector('.modal__close');
-
-    popup.classList.add(mod);
-    popup.appendChild(content);
-
-    closeX.addEventListener('click', closePopupHandler);
-
-    return popup;
   };
 
   var scrollSmoothly = function (element) {
@@ -114,6 +114,10 @@
   var initRequired = function (form) {
     var inputs = form.querySelectorAll('input, textarea');
     inputs.forEach(function (input) {
+      if (storage) {
+        input.value = storage[input.name];
+      }
+
       if (input.hasAttribute('custom-required')) {
         input.removeAttribute('required');
       }
@@ -153,12 +157,22 @@
 
   var customSubmitForm = function (form) {
     if (validateForm(form, customSubmitValidations)) {
+      if (isStorageSupport) {
+        var inputs = form.elements;
+
+        for (var i = 0; i < inputs.length; i++) {
+          if (inputs[i].nodeName === 'INPUT' || inputs[i].nodeName === 'TEXTAREA') {
+            localStorage.setItem(inputs[i].name, inputs[i].value);
+          }
+        }
+      }
       form.submit();
     }
   };
 
   customSubmitValidations.push(customRequired);
   initRequired(feedbackForm);
+  initRequired(popupForm);
 
   formSubmitButton.addEventListener('click', function (evt) {
     evt.preventDefault();
@@ -170,10 +184,22 @@
     customSubmitForm(feedbackForm);
   });
 
+  popupFormSubmitButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    customSubmitForm(popupForm);
+  });
+
+  popupForm.addEventListener('submit', function (evt) {
+    evt.preventDefault();
+    customSubmitForm(popupForm);
+  });
+
+  if (popup) {
+    closeX.addEventListener('click', closePopupHandler);
+  }
+
   if (requestCallButton) {
-    requestCallButton.addEventListener('click', function () {
-      openPopupHandler(requestCallFormTemplate, 'modal--blue');
-    });
+    requestCallButton.addEventListener('click', openPopupHandler);
   }
 
   if (scrollDown) {
