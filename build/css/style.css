@@ -374,6 +374,12 @@ template {
   border: none;
   background: url("../img/icon-close.svg") no-repeat transparent;
   z-index: 1; }
+.modal__close:hover {
+    opacity: 0.6; }
+.modal__close:focus {
+    opacity: 0.6; }
+.modal__close:active {
+    opacity: 0.3; }
 @media (max-width: 767px) {
     .modal__close {
       right: -20px;

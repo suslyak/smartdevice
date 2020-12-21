@@ -36,6 +36,8 @@
   background: url("../img/icon-close.svg") no-repeat transparent;
   z-index: 1;
 
+  @include actions-op;
+
   @media (max-width: $mobile-width) {
     right: -20px;
     top: -5px;
