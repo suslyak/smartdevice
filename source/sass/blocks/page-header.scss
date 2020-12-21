@@ -259,8 +259,8 @@
   margin: 43px 0 0 94px;
   z-index: 1;
 
-  span:nth-child(2) {
-    display: none;
+  &:after {
+    content: "Получить бесплатную консультацию";
   }
 
   @media (max-width: $tablet-width) {
@@ -274,12 +274,8 @@
     margin: 41px 0 0;
     z-index: 1;
 
-    span:nth-child(1) {
-      display: none;
-    }
-
-    span:nth-child(2) {
-      display: inline;
+    &:after {
+      content: "Бесплатная консультация";
     }
   }
 }
@@ -388,6 +384,8 @@
 }
 
 .page-header__request-call {
+  position: relative;
+  top: 3px;
   @media (max-width: $tablet-width) {
     display: none;
   }

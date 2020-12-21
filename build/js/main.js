@@ -7,7 +7,6 @@
   var VALID_FIELD_BACKGROUND_COLOR = 'rgba(255,255,255, 0.1)';
 
   var pageHeader = document.querySelector('.page-header');
-  var aboutUs = document.querySelector('.about-us');
   var scrollDown = pageHeader.querySelector('.page-header__scroll-down');
   var promoButton = pageHeader.querySelector('.page-header__promo-button');
   var feedbackForm = document.querySelector('.feedback-form');

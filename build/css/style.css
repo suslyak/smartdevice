@@ -314,7 +314,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100vh;
-  font-family: "PT Mono", "Times New Roman", serif;
+  font-family: "PT Mono", "Times New Roman", monospace;
   font-size: 16px;
   line-height: 22px;
   font-weight: normal;
@@ -371,7 +371,8 @@ template {
   width: 17px;
   height: 17px;
   cursor: pointer;
-  background: url("../img/icon-close.svg") no-repeat;
+  border: none;
+  background: url("../img/icon-close.svg") no-repeat transparent;
   z-index: 1; }
 @media (max-width: 767px) {
     .modal__close {
@@ -768,8 +769,8 @@ template {
 .page-header__promo-button {
   margin: 43px 0 0 94px;
   z-index: 1; }
-.page-header__promo-button span:nth-child(2) {
-    display: none; }
+.page-header__promo-button:after {
+    content: "Получить бесплатную консультацию"; }
 @media (max-width: 1023px) {
     .page-header__promo-button {
       width: 380px;
@@ -780,10 +781,8 @@ template {
       width: 100%;
       margin: 41px 0 0;
       z-index: 1; }
-      .page-header__promo-button span:nth-child(1) {
-        display: none; }
-      .page-header__promo-button span:nth-child(2) {
-        display: inline; } }
+      .page-header__promo-button:after {
+        content: "Бесплатная консультация"; } }
 .page-header__rectangles {
   position: absolute;
   left: 55%;
@@ -862,52 +861,42 @@ template {
 @media (max-width: 1023px) {
     .page-header__scroll-down {
       display: none; } }
+.page-header__request-call {
+  position: relative;
+  top: 3px; }
 @media (max-width: 1023px) {
-  .page-header__request-call {
-    display: none; } }
+    .page-header__request-call {
+      display: none; } }
 .logo {
   display: block;
   position: relative;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  top: 10px;
-  width: 220px;
+  top: 0;
+  width: 216px;
+  height: 52px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   color: #1b2d37;
-  text-decoration: none; }
+  text-decoration: none;
+  background: url("../img/icon-logo-black.svg") no-repeat 0 0/cover; }
 .logo:hover {
     opacity: 0.6; }
 .logo:focus {
     opacity: 0.6; }
 .logo:active {
     opacity: 0.3; }
-.logo:visited {
-    color: #1b2d37; }
-.logo:visited span:not(:first-of-type) {
-      color: #788891; }
 .logo--white {
-    color: #ffffff; }
-.logo--white:visited {
-      color: #ffffff; }
+    width: 202px;
+    height: 52px;
+    background: url("../img/icon-logo-white.svg") no-repeat 0 0/cover; }
 @media (max-width: 767px) {
     .logo--reducing {
       width: 38px;
-      height: 38px; }
-      .logo--reducing span {
-        display: none; } }
+      height: 38px;
+      background: url("../img/icon-circuit.svg") no-repeat 0 0/cover; } }
 @media (max-width: 767px) {
     .logo {
       margin-bottom: 26px; } }
-.logo__icon {
-  display: block;
-  position: relative;
-  top: -10px;
-  float: left;
-  margin-right: 16px; }
-@media (max-width: 767px) {
-    .logo__icon--shrinking {
-      width: 38px;
-      height: 38px; } }
 .logo__title {
   font-weight: bold;
   font-size: 25px;
@@ -938,11 +927,11 @@ template {
   background: url("../img/polygons.svg") no-repeat 50% -29px; }
 @media (max-width: 1023px) {
     .page-content {
-      background-image: url("../img/Polygon3.svg");
+      background-image: url("../img/polygon3.svg");
       background-position: 211px 89px; } }
 @media (max-width: 767px) {
     .page-content {
-      background-image: url("../img/Polygon3.svg");
+      background-image: url("../img/polygon3.svg");
       background-position: -120px 652px; } }
 .advantages {
   position: relative;
@@ -1428,6 +1417,10 @@ template {
 .page-footer__copyright-info a {
     color: rgba(27, 45, 55, 0.5);
     text-decoration: none; }
+.page-footer__copyright-info a:hover {
+      text-decoration: underline; }
+.page-footer__copyright-info a:active {
+      opacity: 0.3; }
 .page-footer__copyright-info a:visited {
       color: rgba(27, 45, 55, 0.5); }
 @media (max-width: 1023px) {
@@ -1787,14 +1780,14 @@ template {
     width: 100%;
     height: unset;
     top: 70px;
-    left: -25px;
+    left: -6%;
     z-index: 1; }
 .feedback__promo svg {
     position: absolute;
     width: 130%;
     height: unset;
     top: -150px;
-    left: -200px;
+    left: -39%;
     z-index: 0; }
 @media (max-width: 1023px) {
     .feedback__promo {

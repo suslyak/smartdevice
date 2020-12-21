@@ -9,12 +9,12 @@
   background: url("../img/polygons.svg") no-repeat 50% -29px;
 
   @media (max-width: $tablet-width) {
-    background-image: url("../img/Polygon3.svg");
+    background-image: url("../img/polygon3.svg");
     background-position: 211px 89px;
   }
 
   @media (max-width: $mobile-width) {
-    background-image: url("../img/Polygon3.svg");
+    background-image: url("../img/polygon3.svg");
     background-position: -120px 652px;
   }
 }

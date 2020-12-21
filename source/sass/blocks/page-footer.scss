@@ -260,6 +260,14 @@
     color: $black--Op;
     text-decoration: none;
 
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+
     &:visited {
       color: $black--Op;
     }

@@ -32,7 +32,8 @@
   width: 17px;
   height: 17px;
   cursor: pointer;
-  background: url("../img/icon-close.svg") no-repeat;
+  border: none;
+  background: url("../img/icon-close.svg") no-repeat transparent;
   z-index: 1;
 
   @media (max-width: $mobile-width) {
