@@ -1,6 +1,8 @@
 .modal {
   display: none;
-  position: fixed;
+  position: absolute;
+  left: calc(50% - 245px);
+  top: 4%;
   width: 490px;
   min-width: 290px;
   padding: 30px 40px 45px;

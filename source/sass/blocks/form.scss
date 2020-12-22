@@ -1,0 +1,298 @@
+.form {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  color: $white;
+  background-color: $blue;
+
+  h3 {
+    width: 100%;
+    margin: 0;
+    margin-left: -3px;
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 51px;
+  }
+
+  p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 22px;
+
+    @media (max-width: $tablet-width) {
+      margin: 16px 0;
+    }
+
+    @media (max-width: $mobile-width) {
+      margin: 12px 0;
+    }
+  }
+
+  input {
+    display: flex;
+    height: 51px;
+    align-items: center;
+    font-size: 16px;
+    line-height: 22px;
+    color: $white;
+    background-color: $white-Op10;
+    border: 1px solid $blue;
+    outline: none;
+    border-radius: 0;
+
+    &:hover {
+      background-color: $black--Op;
+    }
+
+    &:focus {
+      border-color: $white;
+    }
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    color: $white;
+    background-color: $white-Op10;
+    border: 1px solid $blue;
+    outline: none;
+    resize: none;
+
+    &:hover {
+      background-color: $black--Op;
+    }
+
+    &:focus {
+      border-color: $white;
+    }
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+
+  button {
+    &:hover {
+      background-color: $black--Op;
+    }
+  }
+
+  &--subtile {
+    h3 {
+      font-size: 28px;
+      line-height: 39px;
+    }
+
+    input {
+      width: 100%;
+      margin-top: 30px;
+      padding: 0 22px;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+
+    textarea {
+      min-height: 108px;
+      margin: 30px 0 30px;
+      padding: 14px 21px;
+    }
+
+    button {
+      width: 100%;
+      margin-bottom: 26px;
+    }
+  }
+
+  &--wide {
+    input {
+      width: calc((100% - 31px) / 2);
+      margin-right: 30px;
+      margin-top: 40px;
+      padding: 0 15px;
+
+      &:nth-of-type(2n+2) {
+        margin-right: 0;
+      }
+
+      @media (max-width: $tablet-width) {
+        margin-top: 36px;
+      }
+
+      @media (max-width: $mobile-width) {
+        width: 100%;
+        margin-top: 30px;
+        margin-right: 0;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+    }
+
+    textarea {
+      min-height: 155px;
+      margin: 40px 0 42px;
+      padding: 13px 17px;
+
+      @media (max-width: $tablet-width) {
+        margin: 45px 0 49px;
+      }
+
+      @media (max-width: $mobile-width) {
+        min-height: 108px;
+        margin: 30px 0 30px;
+      }
+    }
+
+    button {
+      width: calc((100% - 35px) / 2);
+      margin-right: 34px;
+    }
+
+    @media (max-width: $tablet-width) {
+      h3 {
+        font-size: 32px;
+        line-height: 45px;
+      }
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 100%;
+      min-width: 250px;
+
+      h3 {
+        font-size: 28px;
+        line-height: 39px;
+      }
+
+      button {
+        width: 100%;
+        margin: 0 0 24px;
+      }
+    }
+  }
+}
+
+.form__formfields {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  &--subtile {
+    margin-top: 25px;
+  }
+
+  &--wide {
+    @media (max-width: $mobile-width) {
+      margin-top: 13px;
+    }
+  }
+}
+
+.form__checkbox {
+  input[type="checkbox"] {
+    appearance: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+    &:focus + label::before {
+      background-color: $black--Op;
+    }
+
+    &:disabled + label {
+      opacity: 0.3;
+    }
+  }
+
+  label {
+    position: relative;
+    top: 7px;
+    display: flex;
+    align-items: flex-start;
+    font-size: 14px;
+    line-height: 16px;
+    opacity: 0.8;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: relative;
+      top: 2px;
+      display: block;
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid $white;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+
+    &:hover {
+      &::before {
+        border: 1px solid $black--Op;
+      }
+    }
+
+    &:focus + label::before {
+      background-color: $black--Op;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  input:checked ~ label::after {
+    content: url("../img/icon-tick.svg");
+    width: 9px;
+    height: 6px;
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    display: block;
+    cursor: pointer;
+  }
+
+  &--subtile {
+    width: 100%;
+    margin-left: auto;
+
+    label {
+      &::before {
+        margin-right: 33px;
+      }
+    }
+
+    @media (max-width: $mobile-width) {
+      top: 0;
+    }
+  }
+
+  &--wide {
+    width: calc((100% - 48px) / 2);
+    margin-left: auto;
+
+    @media (max-width: $mobile-width) {
+      width: 100%;
+    }
+  }
+}

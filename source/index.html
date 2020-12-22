@@ -17,6 +17,9 @@
     <div class="page-header__container">
       <div class="page-header__top-info">
         <a class="logo logo--white logo--reducing" href="index.html" aria-label="Логотип Smart Device">
+          <svg width="202" height="52">
+            <use xlink:href="img/sprite_auto.svg#icon-logo-white"></use>
+          </svg>
         </a>
         <ul class="page-header__contact-methods">
           <li>
@@ -38,13 +41,18 @@
           </li>
         </ul>
         <a class="button button--big button--blue-fill page-header__promo-button" href="#feedback" role="button" aria-label="Получить консультацию">
+          <span class="page-header__promo-button-text page-header__promo-button-text--long">
+            Получить бесплатную консультацию
+          </span>
+          <span class="page-header__promo-button-text page-header__promo-button-text--short">
+            Бесплатная консультация
+          </span>
         </a>
         <svg class="page-header__rectangles" width="671" height="641">
           <use xlink:href="img/sprite_auto.svg#icon-rectangles-figure"></use>
         </svg>
         <picture>
           <source srcset="img/promo-bg-chip.webp 1x, img/promo-bg-chip@2x.webp 2x" type="image/webp">
-          <source srcset="img/promo-bg-chip.png 1x, img/promo-bg-chip@2x.png 2x" type="image/png">
           <!-- 1х: 705px; 2x:1410px -->
           <img src="img/promo-bg-chip.png" alt="набор печатных плат" srcset="img/promo-bg-chip.png 1x, img/promo-bg-chip@2x.png 2x" width="705" height="515">
         </picture>
@@ -121,7 +129,6 @@
             <div class="services__picture">
               <picture>
                 <source srcset="img/1n.webp 1x, img/1n@2x.webp 2x" type="image/webp">
-                <source srcset="img/1n.png 1x, img/1n@2x.png 2x" type="image/png">
                 <!-- 1х: 2141px; 2x:4282px -->
                 <img src="img/1n.png" alt="печатная плата на конвеере" srcset="img/1n.png 1x, img/1n@2x.png 2x" width="2141" height="1428">
               </picture>
@@ -134,7 +141,6 @@
             <div class="services__picture">
               <picture>
                 <source srcset="img/2.webp 1x, img/2@2x.webp 2x" type="image/webp">
-                <source srcset="img/2.png 1x, img/2@2x.png 2x" type="image/png">
                 <!-- 1х: 1970px; 2x:3940px -->
                 <img src="img/2.png" alt="чип приваривается к плате" srcset="img/2.png 1x, img/2@2x.png 2x" width="1970" height="1313">
               </picture>
@@ -147,7 +153,6 @@
             <div class="services__picture">
               <picture>
                 <source srcset="img/3.webp 1x, img/3@2x.webp 2x" type="image/webp">
-                <source srcset="img/3.png 1x, img/3@2x.png 2x" type="image/png">
                 <!-- 1х: 1206px; 2x:2412px -->
                 <img src="img/3.png" alt="диодная лента" srcset="img/3.png 1x, img/3@2x.png 2x" width="1206" height="1206">
               </picture>
@@ -162,32 +167,21 @@
     <section id="feedback" class="feedback">
       <div class="feedback__container">
         <h2 class="visually-hidden">Обратная связь</h2>
-        <div class="feedback__promo">
-          <picture>
-            <source srcset="img/paper_airplane.webp 1x, img/paper_airplane@2x.webp 2x" type="image/webp">
-            <source srcset="img/paper_airplane.png 1x, img/paper_airplane@2x.png 2x" type="image/png">
-            <!-- 1х: 511px; 2x:1022px -->
-            <img src="img/paper_airplane.png" alt="бумажный самолёт" srcset="img/paper_airplane.png 1x, img/paper_airplane@2x.png 2x" width="511" height="288">
-          </picture>
-          <svg class="feedback__rectangles" width="671" height="641">
-            <use xlink:href="img/sprite_auto.svg#icon-rectangles-figure"></use>
-          </svg>
-        </div>
-        <form class="feedback-form" action="#">
+        <form class="form form--wide" action="#">
           <h3>Остались вопросы? Задайте их&nbsp;нам!</h3>
           <p>
             Мы проконсультируем Вас бесплатно
           </p>
-          <div class="formfields feedback-form__fieldset">
+          <div class="form__formfields form__formfields--wide">
             <label for="name" class="visually-hidden">Имя</label>
-            <input id="name" type="text" name="name" placeholder="Имя" required custom-required="true">
+            <input id="name" type="text" name="name" placeholder="Имя" required data-custom-required="true">
             <label for="phone" class="visually-hidden" >Телефон</label>
-            <input id="phone" type="tel" name="phone" pattern="^[0-9-\s()+]*$" placeholder="Телефон" value="" required custom-required="true">
+            <input id="phone" type="tel" name="phone" pattern="^[0-9-\s()+]*$" placeholder="Телефон" value="" required data-custom-required="true">
             <label for="message" class="visually-hidden" >Вы можете задать вопрос</label>
-            <textarea id="message" name="message" rows="3" placeholder="Ваш вопрос" required custom-required="true"></textarea>
+            <textarea id="message" name="message" rows="3" placeholder="Ваш вопрос" required data-custom-required="true"></textarea>
           </div>
           <button class="button" type="submit" aria-label="Отправить вопрос">Задать вопрос</button>
-          <div class="checkbox feedback-form__checkbox">
+          <div class="form__checkbox form__checkbox--wide">
             <input id="agree" name="i-agree" type="checkbox" value="i-agree" checked>
             <label for="agree">Я согласен на обработку  персональных данных</label>
           </div>
@@ -199,6 +193,9 @@
     <div class="page-footer__container">
       <div class="page-footer__head-block">
         <a class="logo" href="index.html" aria-label="Логотип Smart Device">
+          <svg width="216" height="52">
+            <use xlink:href="img/sprite_auto.svg#icon-logo-black"></use>
+          </svg>
         </a>
         <span class="page-footer__est">1999-2018 SD Service Devices</span>
         <ul class="page-footer__social-links">
@@ -227,9 +224,8 @@
       </div>
       <nav class="page-footer__menu">
         <h3>Разделы сайта</h3>
-        <input id="page-footer__accordion-toggle-1" class="page-footer__accordion-toggle" name="footer-menu" type="checkbox">
-        <label for="page-footer__accordion-toggle-1" class="page-footer__accordion-label">
-        </label>
+        <button class="page-footer__accordion-toggle" type="button">
+        </button>
         <div class="page-footer__info-container">
           <ul class="page-footer__navigation">
             <li class="page-footer__menulink"><a href="#">О компании</a></li>
@@ -246,9 +242,8 @@
       </nav>
       <div class="page-footer__office">
         <h3>Наш офис</h3>
-        <input id="page-footer__accordion-toggle-2" class="page-footer__accordion-toggle" name="footer-menu" type="checkbox">
-        <label for="page-footer__accordion-toggle-2" class="page-footer__accordion-label">
-        </label>
+        <button class="page-footer__accordion-toggle" type="button">
+        </button>
         <div class="page-footer__info-container">
           <p>
           г. Мытищи, Олимпийский проспект, д.10
@@ -279,28 +274,28 @@
   <div class="modal modal--blue">
     <div class="modal__content">
       <button class="modal__close" type="button" aria-label="Закрыть окно"></button>
-      <form action="#" method="post" class="request-call-form">
+      <form action="#" method="post" class="form form--subtile">
         <h3>Закажите звонок</h3>
         <p>
           Оставьте контакты, мы проконсультируем вас&nbsp;бесплатно в удобное время
         </p>
-        <div class="formfields request-call-form__fieldset">
+        <div class="form__formfields form__formfields--subtile">
           <label for="call-me-name" class="visually-hidden">Имя</label>
-          <input id="call-me-name" type="text" name="call-me-name" placeholder="Имя" required custom-required="true">
+          <input id="call-me-name" type="text" name="call-me-name" placeholder="Имя" required data-custom-required="true">
           <label for="call-me-phone" class="visually-hidden">Телефон</label>
-          <input id="call-me-phone" type="tel" name="call-me-phone" pattern="^[0-9-\s()+]*$" placeholder="Телефон" value="" required custom-required="true">
+          <input id="call-me-phone" type="tel" name="call-me-phone" pattern="^[0-9-\s()+]*$" placeholder="Телефон" value="" required data-custom-required="true">
           <label class="visually-hidden" for="call-me-message">Вы можете задать вопрос</label>
-          <textarea id="call-me-message" name="call-me-message" rows="3" placeholder="Ваш вопрос" required custom-required="true"></textarea>
+          <textarea id="call-me-message" name="call-me-message" rows="3" placeholder="Ваш вопрос" required data-custom-required="true"></textarea>
         </div>
         <button class="button" type="submit" aria-label="Отправить запрос">Отправить</button>
-        <div class="checkbox request-call-form__checkbox">
+        <div class="form__checkbox form__checkbox--subtile">
           <input id="call-me-agree" name="call-me-agree" type="checkbox" value="i-agree" checked>
           <label for="call-me-agree">Я согласен на обработку  персональных данных</label>
         </div>
       </form>
     </div>
   </div>
-  <script src="js/main.js"></script>
   <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

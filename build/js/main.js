@@ -6,17 +6,20 @@
   var INVALID_FIELD_BACKGROUND_COLOR = '#ff8282';
   var VALID_FIELD_BACKGROUND_COLOR = 'rgba(255,255,255, 0.1)';
 
+  var body = document.querySelector('body');
   var pageHeader = document.querySelector('.page-header');
   var scrollDown = pageHeader.querySelector('.page-header__scroll-down');
   var promoButton = pageHeader.querySelector('.page-header__promo-button');
-  var feedbackForm = document.querySelector('.feedback-form');
+  var feedbackForm = document.querySelector('.form--wide');
   var formSubmitButton = feedbackForm.querySelector('button[type="submit"]');
   var requestCallButton = pageHeader.querySelector('.page-header__request-call');
   var popup = document.querySelector('.modal');
-  var popupForm = popup.querySelector('.request-call-form');
+  var popupForm = popup.querySelector('.form--subtile');
   var popupFormSubmitButton = popup.querySelector('button[type="submit"]');
   var popupFocusField = popup.querySelector('input[name="call-me-name"]');
   var closeX = popup.querySelector('.modal__close');
+  var pageFooter = document.querySelector('.page-footer');
+  var accordionButtons = pageFooter.querySelectorAll('.page-footer__accordion-toggle');
   var customSubmitValidations = [];
 
   var isStorageSupport = true;
@@ -55,26 +58,26 @@
     overlay.classList.add('overlay');
     overlay.addEventListener('click', closePopupHandler);
 
-    document.querySelector('body').classList.add('modal-open');
+    body.classList.add('modal-open');
 
     if (popup) {
       popup.classList.add('modal--show');
       popupFocusField.focus();
     }
 
-    document.querySelector('body').appendChild(overlay);
+    body.appendChild(overlay);
   };
 
   var closePopup = function () {
     var overlay = document.querySelector('.overlay');
 
     if (overlay) {
-      overlay.remove();
+      body.removeChild(overlay);
     }
 
     if (popup) {
       popup.classList.remove('modal--show');
-      document.querySelector('body').classList.remove('modal-open');
+      body.classList.remove('modal-open');
     }
   };
 
@@ -94,7 +97,7 @@
         input.value = storage[input.name] ? storage[input.name] : '';
       }
 
-      if (input.hasAttribute('custom-required')) {
+      if (input.hasAttribute('data-custom-required')) {
         input.removeAttribute('required');
       }
     });
@@ -103,7 +106,7 @@
   var customRequired = function (element) {
     var validityMessage = '';
 
-    if (element.hasAttribute('custom-required')) {
+    if (element.hasAttribute('data-custom-required')) {
       if (!element.value) {
         validityMessage += 'Это обязательное поле';
       }
@@ -193,4 +196,21 @@
       scrollSmoothly(promoButton);
     });
   }
+
+  accordionButtons.forEach(function (button) {
+    button.addEventListener('click', function (event) {
+      var accordion = event.target.nextElementSibling;
+      accordion.classList.add('page-footer__info-container--current');
+      var openedAccordions = pageFooter.querySelectorAll('.page-footer__info-container--active:not(.page-footer__info-container--current)');
+
+      openedAccordions.forEach(function (element) {
+        element.classList.remove('page-footer__info-container--active');
+        element.previousElementSibling.classList.remove('page-footer__accordion-toggle--active');
+      });
+
+      accordion.classList.remove('page-footer__info-container--current');
+      button.classList.toggle('page-footer__accordion-toggle--active');
+      accordion.classList.toggle('page-footer__info-container--active');
+    });
+  });
 })();

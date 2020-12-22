@@ -259,10 +259,6 @@
   margin: 43px 0 0 94px;
   z-index: 1;
 
-  &:after {
-    content: "Получить бесплатную консультацию";
-  }
-
   @media (max-width: $tablet-width) {
     width: 380px;
     margin: 55px 0 0 48px;
@@ -273,9 +269,21 @@
     width: 100%;
     margin: 41px 0 0;
     z-index: 1;
+  }
+}
 
-    &:after {
-      content: "Бесплатная консультация";
+.page-header__promo-button-text {
+  &--long {
+    @media (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+
+  &--short {
+    display: none;
+
+    @media (max-width: $mobile-width) {
+      display: inline;
     }
   }
 }
@@ -386,6 +394,7 @@
 .page-header__request-call {
   position: relative;
   top: 3px;
+
   @media (max-width: $tablet-width) {
     display: none;
   }

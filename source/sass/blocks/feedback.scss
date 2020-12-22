@@ -3,38 +3,63 @@
   display: flex;
   width: 100%;
   min-height: 670px;
-  padding: 90px 60px 110px;
-  background: url("../img/triangles.svg") no-repeat 960px 34px $blue;
+  padding: 60px 60px 110px;
+  background:
+    url("../img/paper_airplane.png") no-repeat 25% 160px,
+    url("../img/triangles.svg") no-repeat 960px 34px,
+    url("../img/icon-rectangles-figure.svg") no-repeat 14% -62px,
+    linear-gradient(to left, $blue, $blue);
   z-index: 1;
+
+  @media (min-resolution: $retina-dppx) {
+    background:
+      url("../img/paper_airplane@2x.png") no-repeat 25% 160px/511px 288px,
+      url("../img/triangles.svg") no-repeat 960px 34px,
+      url("../img/icon-rectangles-figure.svg") no-repeat 14% -62px,
+      linear-gradient(to left, $blue, $blue);
+  }
 
   form {
     position: relative;
-    width: 49%;
+    width: 630px;
     margin-left: auto;
-    padding-left: 4px;
+    padding: 30px;
     flex-shrink: 0;
     z-index: 2;
   }
 
+  @media (max-width: $desktop-adjustments--feedback) {
+    background:
+      url("../img/triangles.svg") no-repeat 960px 34px,
+      url("../img/icon-rectangles-figure.svg") no-repeat 14% -62px,
+      linear-gradient(to left, $blue, $blue);
+  }
+
   @media (max-width: $tablet-width) {
     min-height: 600px;
-    padding: 80px 90px 104px;
+    padding: 50px 60px 74px;
     justify-content: center;
+    background: $blue;
 
     form {
       width: 100%;
-      padding-left: 0;
+      padding-right: 26px;
     }
   }
 
   @media (max-width: $mobile-width) {
     padding: 31px 15px 48px;
+
+    form {
+      width: 100%;
+      padding: 0;
+    }
   }
 }
 
 .feedback__container {
   width: 100%;
-  max-width: 1170px;
+  max-width: 1230px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
