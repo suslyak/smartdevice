@@ -40,6 +40,8 @@
     border: 1px solid $blue;
     outline: none;
     border-radius: 0;
+    box-shadow: none;
+    appearance: none;
 
     &:hover {
       background-color: $black--Op;

@@ -523,6 +523,9 @@ template {
     margin-bottom: 25px; }
 .page-header__contact-methods li:last-child {
       margin-right: 0; }
+@media (max-width: 1100px) {
+      .page-header__contact-methods li {
+        margin-right: 33px; } }
 @media (max-width: 1023px) {
       .page-header__contact-methods li {
         margin-right: 33px; } }
@@ -534,12 +537,6 @@ template {
     line-height: 18px;
     color: #ffffff;
     text-decoration: none; }
-.page-header__contact-methods a:focus, .page-header__contact-methods a:hover {
-      text-decoration: underline; }
-.page-header__contact-methods a:active {
-      opacity: 0.5; }
-.page-header__contact-methods a:visited {
-      color: #ffffff; }
 .page-header__contact-methods a[href^="mailto:"]::before {
       content: "";
       display: inline-block;
@@ -568,6 +565,12 @@ template {
         height: 24px;
         margin-right: 0;
         background-size: 24px 24px; } }
+.page-header__contact-methods a[href]:focus, .page-header__contact-methods a[href]:hover {
+      text-decoration: underline; }
+.page-header__contact-methods a[href]:active {
+      opacity: 0.5; }
+.page-header__contact-methods a[href]:visited {
+      color: #ffffff; }
 @media (max-width: 1023px) {
       .page-header__contact-methods a {
         margin-left: auto;
@@ -767,14 +770,15 @@ template {
   top: 0;
   width: 216px;
   height: 52px;
+  margin-right: 50px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   color: #1b2d37;
   text-decoration: none; }
-.logo:hover {
+.logo[href]:hover {
     opacity: 0.6; }
-.logo:focus {
+.logo[href]:focus {
     opacity: 0.6; }
-.logo:active {
+.logo[href]:active {
     opacity: 0.3; }
 .logo--white {
     width: 202px;
@@ -787,8 +791,12 @@ template {
       .logo--reducing svg {
         width: 150px;
         height: auto; } }
+@media (max-width: 1023px) {
+    .logo {
+      margin-right: 5px; } }
 @media (max-width: 767px) {
     .logo {
+      margin-right: 0;
       margin-bottom: 26px; } }
 .page-content {
   position: relative;
@@ -1212,10 +1220,14 @@ template {
     .page-footer__info-container {
       height: 0;
       overflow: hidden;
-      margin-top: 0; } }
+      margin-top: 0;
+      padding: 0 15px; }
+      .page-footer__info-container--no-js {
+        height: auto;
+        margin-bottom: 27px; } }
 .page-footer__info-container--active {
     height: auto;
-    margin-top: 30px; }
+    margin-bottom: 27px; }
 .page-footer__menu {
   position: relative;
   -webkit-box-flex: 1;
@@ -1235,7 +1247,7 @@ template {
 @media (max-width: 767px) {
     .page-footer__menu {
       width: 100%;
-      padding: 29px 15px 27px;
+      padding: 0;
       border-bottom: 1px solid rgba(98, 105, 98, 0.2); } }
 .page-footer__office {
   position: relative;
@@ -1253,7 +1265,7 @@ template {
 @media (max-width: 767px) {
     .page-footer__office {
       width: 100%;
-      padding: 29px 15px 27px; } }
+      padding: 0; } }
 .page-footer__navigation {
   width: 34%;
   display: -webkit-box;
@@ -1381,26 +1393,41 @@ template {
     .page-footer__copyright-est {
       display: none; } }
 .page-footer__accordion-toggle {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: none;
+  background-color: transparent; }
+.page-footer__accordion-toggle span::before {
+    content: "+"; }
+.page-footer__accordion-toggle--active span::before {
+    content: "—"; }
+@media (max-width: 767px) {
+    .page-footer__accordion-toggle {
+      padding: 29px 15px 29px;
+      cursor: pointer; }
+      .page-footer__accordion-toggle h3 {
+        display: inline;
+        z-index: 0; }
+      .page-footer__accordion-toggle:focus, .page-footer__accordion-toggle:hover {
+        color: #00b2ff; }
+      .page-footer__accordion-toggle:active {
+        opacity: 0.3;
+        color: #00b2ff; } }
+.page-footer__accordion-indicator {
   display: none;
   position: absolute;
-  right: 11px;
-  top: 19px;
-  font-size: 27px;
+  right: 17px;
+  top: 25px;
+  font-size: 28px;
   color: #c4c4c4;
   border: none;
   background-color: transparent;
   cursor: pointer;
   outline: none; }
-.page-footer__accordion-toggle::before {
-    content: "+"; }
-.page-footer__accordion-toggle:focus, .page-footer__accordion-toggle:hover {
-    color: #00b2ff; }
-.page-footer__accordion-toggle:active {
-    opacity: 0.3; }
-.page-footer__accordion-toggle--active::before {
-    content: "—"; }
 @media (max-width: 767px) {
-    .page-footer__accordion-toggle {
+    .page-footer__accordion-indicator {
       display: block; } }
 .services {
   display: -webkit-box;
@@ -1596,7 +1623,7 @@ template {
   display: flex;
   width: 100%;
   min-height: 670px;
-  padding: 60px 60px 110px;
+  padding: 60px 60px 84px;
   background: url("../img/paper_airplane.png") no-repeat 25% 160px, url("../img/triangles.svg") no-repeat 960px 34px, url("../img/icon-rectangles-figure.svg") no-repeat 14% -62px, -webkit-gradient(linear, right top, left top, from(#00b2ff), to(#00b2ff));
   background: url("../img/paper_airplane.png") no-repeat 25% 160px, url("../img/triangles.svg") no-repeat 960px 34px, url("../img/icon-rectangles-figure.svg") no-repeat 14% -62px, linear-gradient(to left, #00b2ff, #00b2ff);
   z-index: 1; }
@@ -1713,7 +1740,12 @@ template {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid #00b2ff;
     outline: none;
-    border-radius: 0; }
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; }
 .form input:hover {
       background-color: rgba(27, 45, 55, 0.5); }
 .form input:focus {

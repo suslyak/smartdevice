@@ -177,11 +177,17 @@
     height: 0;
     overflow: hidden;
     margin-top: 0;
+    padding: 0 15px;
+
+    &--no-js {
+      height: auto;
+      margin-bottom: 27px;
+    }
   }
 
   &--active {
     height: auto;
-    margin-top: 30px;
+    margin-bottom: 27px;
   }
 }
 
@@ -198,7 +204,7 @@
 
   @media (max-width: $mobile-width) {
     width: 100%;
-    padding: 29px 15px 27px;
+    padding: 0;
     border-bottom: 1px solid $border-concrete;
   }
 }
@@ -218,7 +224,7 @@
 
   @media (max-width: $mobile-width) {
     width: 100%;
-    padding: 29px 15px 27px;
+    padding: 0;
   }
 }
 
@@ -364,35 +370,57 @@
 }
 
 .page-footer__accordion-toggle {
+  position: relative;
+  display: flex;
+  border: none;
+  background-color: transparent;
+
+  span {
+    &::before {
+      content: "+";
+    }
+  }
+
+  &--active {
+    span {
+      &::before {
+        content: "—";
+      }
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 29px 15px 29px;
+    cursor: pointer;
+
+    h3 {
+      display: inline;
+      z-index: 0;
+    }
+
+    &:focus,
+    &:hover {
+      color: $blue;
+    }
+
+    &:active {
+      opacity: 0.3;
+      color: $blue;
+    }
+  }
+}
+
+.page-footer__accordion-indicator {
   display: none;
   position: absolute;
-  right: 11px;
-  top: 19px;
-  font-size: 27px;
+  right: 17px;
+  top: 25px;
+  font-size: 28px;
   color: $weathered-stone;
   border: none;
   background-color: transparent;
   cursor: pointer;
   outline: none;
-
-  &::before {
-    content: "+";
-  }
-
-  &:focus,
-  &:hover {
-    color: $blue;
-  }
-
-  &:active {
-    opacity: 0.3;
-  }
-
-  &--active {
-    &::before {
-      content: "—";
-    }
-  }
 
   @media (max-width: $mobile-width) {
     display: block;

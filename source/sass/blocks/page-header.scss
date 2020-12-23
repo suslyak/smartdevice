@@ -81,6 +81,10 @@
       margin-right: 0;
     }
 
+    @media (max-width: $desktop-adjustments--header) {
+      margin-right: 33px;
+    }
+
     @media (max-width: $tablet-width) {
       margin-right: 33px;
     }
@@ -95,19 +99,6 @@
     line-height: 18px;
     color: $white;
     text-decoration: none;
-
-    &:focus,
-    &:hover {
-      text-decoration: underline;
-    }
-
-    &:active {
-      opacity: 0.5;
-    }
-
-    &:visited {
-      color: $white;
-    }
 
     &[href^="mailto:"] {
       &::before {
@@ -148,6 +139,21 @@
           margin-right: 0;
           background-size: 24px 24px;
         }
+      }
+    }
+
+    &[href] {
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:active {
+        opacity: 0.5;
+      }
+
+      &:visited {
+        color: $white;
       }
     }
 

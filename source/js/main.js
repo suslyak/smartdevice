@@ -11,6 +11,7 @@
   var scrollDown = pageHeader.querySelector('.page-header__scroll-down');
   var promoButton = pageHeader.querySelector('.page-header__promo-button');
   var feedbackForm = document.querySelector('.form--wide');
+  var phoneInputs = document.querySelectorAll('input[type="tel"');
   var formSubmitButton = feedbackForm.querySelector('button[type="submit"]');
   var requestCallButton = pageHeader.querySelector('.page-header__request-call');
   var popup = document.querySelector('.modal');
@@ -20,6 +21,7 @@
   var closeX = popup.querySelector('.modal__close');
   var pageFooter = document.querySelector('.page-footer');
   var accordionButtons = pageFooter.querySelectorAll('.page-footer__accordion-toggle');
+  var accordionContainers = pageFooter.querySelectorAll('.page-footer__info-container');
   var customSubmitValidations = [];
 
   var isStorageSupport = true;
@@ -83,7 +85,7 @@
 
   var scrollSmoothly = function (element) {
     var anchor = element.getAttribute('href');
-    window.vendorScroll.do(anchor, 700);
+    window.vendorScripts.scroll(anchor, 700);
   };
 
   var indicateInvalidField = function (element, indicator) {
@@ -127,10 +129,7 @@
       }
 
       validity *= input.checkValidity();
-
-      if (HTMLInputElement.prototype.reportValidity) {
-        input.reportValidity();
-      }
+      window.vendorScripts.reportValidity(input);
     });
 
     return validity;
@@ -150,6 +149,23 @@
       form.submit();
     }
   };
+
+  phoneInputs.forEach(function (phoneInput) {
+    phoneInput.addEventListener('input', function () {
+      var validityMessage = '';
+      if (phoneInput.value) {
+        validityMessage = (phoneInput.value.length < 14) ? 'Введите 10 цифр телефона' : '';
+      }
+
+      phoneInput.setCustomValidity(validityMessage);
+      phoneInput.checkValidity();
+      indicateInvalidField(phoneInput, validityMessage);
+    });
+  });
+
+  accordionContainers.forEach(function (container) {
+    container.classList.remove('page-footer__info-container--no-js');
+  });
 
   customSubmitValidations.push(customRequired);
   initRequired(feedbackForm);
@@ -180,7 +196,10 @@
   }
 
   if (requestCallButton) {
-    requestCallButton.addEventListener('click', openPopupHandler);
+    requestCallButton.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      openPopupHandler();
+    });
   }
 
   if (scrollDown) {
@@ -198,8 +217,18 @@
   }
 
   accordionButtons.forEach(function (button) {
-    button.addEventListener('click', function (event) {
-      var accordion = event.target.nextElementSibling;
+    function checkDiv(element) {
+      if (element.nextElementSibling && ((element.nextElementSibling.tagName === 'DIV') || (element.tagName === 'BODY'))) {
+        return element.nextElementSibling;
+      } else {
+        return checkDiv(element.parentElement);
+      }
+    }
+
+    button.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      var accordion = checkDiv(evt.target);
+
       accordion.classList.add('page-footer__info-container--current');
       var openedAccordions = pageFooter.querySelectorAll('.page-footer__info-container--active:not(.page-footer__info-container--current)');
 

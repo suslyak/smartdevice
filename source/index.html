@@ -16,7 +16,7 @@
   <header class="page-header">
     <div class="page-header__container">
       <div class="page-header__top-info">
-        <a class="logo logo--white logo--reducing" href="index.html" aria-label="Логотип Smart Device">
+        <a class="logo logo--white logo--reducing" aria-label="Логотип Smart Device">
           <svg width="202" height="52">
             <use xlink:href="img/sprite_auto.svg#icon-logo-white"></use>
           </svg>
@@ -29,7 +29,7 @@
             <a href="tel:+74950005252" aria-label="позвонить на телефон +74950005252"><span>+7 (495) 000 52 52</span></a>
           </li>
         </ul>
-        <a class="button page-header__request-call" aria-label="заказ звонка">Заказать звонок</a>
+        <a class="button page-header__request-call" aria-label="заказ звонка" href="#">Заказать звонок</a>
       </div>
       <div class="page-header__info">
         <h2>Печатные платы</h2>
@@ -176,13 +176,13 @@
             <label for="name" class="visually-hidden">Имя</label>
             <input id="name" type="text" name="name" placeholder="Имя" required data-custom-required="true">
             <label for="phone" class="visually-hidden" >Телефон</label>
-            <input id="phone" type="tel" name="phone" pattern="^[0-9-\s()+]*$" placeholder="Телефон" value="" required data-custom-required="true">
+            <input id="phone" type="tel" name="phone" pattern="^[0-9-\s()+]{14}" placeholder="Телефон" value="" required data-custom-required="true">
             <label for="message" class="visually-hidden" >Вы можете задать вопрос</label>
             <textarea id="message" name="message" rows="3" placeholder="Ваш вопрос" required data-custom-required="true"></textarea>
           </div>
           <button class="button" type="submit" aria-label="Отправить вопрос">Задать вопрос</button>
           <div class="form__checkbox form__checkbox--wide">
-            <input id="agree" name="i-agree" type="checkbox" value="i-agree" checked>
+            <input id="agree" name="i-agree" type="checkbox" value="i-agree" checked required>
             <label for="agree">Я согласен на обработку  персональных данных</label>
           </div>
         </form>
@@ -192,7 +192,7 @@
   <footer class="page-footer">
     <div class="page-footer__container">
       <div class="page-footer__head-block">
-        <a class="logo" href="index.html" aria-label="Логотип Smart Device">
+        <a class="logo" aria-label="Логотип Smart Device">
           <svg width="216" height="52">
             <use xlink:href="img/sprite_auto.svg#icon-logo-black"></use>
           </svg>
@@ -223,10 +223,11 @@
         </ul>
       </div>
       <nav class="page-footer__menu">
-        <h3>Разделы сайта</h3>
-        <button class="page-footer__accordion-toggle" type="button">
-        </button>
-        <div class="page-footer__info-container">
+        <span class="page-footer__accordion-toggle" role="button">
+          <h3>Разделы сайта</h3>
+          <span class="page-footer__accordion-indicator"></span>
+        </span>
+        <div class="page-footer__info-container page-footer__info-container--no-js">
           <ul class="page-footer__navigation">
             <li class="page-footer__menulink"><a href="#">О компании</a></li>
             <li class="page-footer__menulink"><a href="#">Продукты</a></li>
@@ -241,10 +242,11 @@
         </div>
       </nav>
       <div class="page-footer__office">
-        <h3>Наш офис</h3>
-        <button class="page-footer__accordion-toggle" type="button">
-        </button>
-        <div class="page-footer__info-container">
+        <span class="page-footer__accordion-toggle" role="button">
+          <h3>Наш офис</h3>
+          <span class="page-footer__accordion-indicator"></span>
+        </span>
+        <div class="page-footer__info-container page-footer__info-container--no-js">
           <p>
           г. Мытищи, Олимпийский проспект, д.10
           </p>
@@ -283,13 +285,13 @@
           <label for="call-me-name" class="visually-hidden">Имя</label>
           <input id="call-me-name" type="text" name="call-me-name" placeholder="Имя" required data-custom-required="true">
           <label for="call-me-phone" class="visually-hidden">Телефон</label>
-          <input id="call-me-phone" type="tel" name="call-me-phone" pattern="^[0-9-\s()+]*$" placeholder="Телефон" value="" required data-custom-required="true">
+          <input id="call-me-phone" type="tel" name="call-me-phone" pattern="^[0-9-\s()+]{14}" placeholder="Телефон" value="" required data-custom-required="true">
           <label class="visually-hidden" for="call-me-message">Вы можете задать вопрос</label>
           <textarea id="call-me-message" name="call-me-message" rows="3" placeholder="Ваш вопрос" required data-custom-required="true"></textarea>
         </div>
         <button class="button" type="submit" aria-label="Отправить запрос">Отправить</button>
         <div class="form__checkbox form__checkbox--subtile">
-          <input id="call-me-agree" name="call-me-agree" type="checkbox" value="i-agree" checked>
+          <input id="call-me-agree" name="call-me-agree" type="checkbox" value="i-agree" checked required>
           <label for="call-me-agree">Я согласен на обработку  персональных данных</label>
         </div>
       </form>
