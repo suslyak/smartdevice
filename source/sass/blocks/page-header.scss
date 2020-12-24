@@ -5,32 +5,21 @@
   min-height: 878px;
   padding: 33px 60px 200px;
   overflow: hidden;
-  background: url("../img/promo-bg-waves.png") no-repeat 0 0/cover $black;
+  background: url("../img/promo-bg-waves.jpg") no-repeat 0 0/cover $black;
 
-  @media (min-resolution: $retina-dppx) {
-    background-image: url("../img/promo-bg-waves@2x.png");
-  }
 
   @media (max-width: $tablet-width) {
     min-height: 686px;
     padding: 20px 25px 163px 25px;
 
-    background-image: url("../img/promo-bg-waves-tablet.png");
-
-    @media (min-resolution: $retina-dppx) {
-      background-image: url("../img/promo-bg-waves-tablet@2x.png");
-    }
+    background-image: url("../img/promo-bg-waves-tablet.jpg");
   }
 
   @media (max-width: $mobile-width) {
     min-height: 647px;
     padding: 17px 15px 70px 16px;
 
-    background-image: url("../img/promo-bg-waves-mobile.png");
-
-    @media (min-resolution: $retina-dppx) {
-      background-image: url("../img/promo-bg-waves-mobile@2x.png");
-    }
+    background-image: url("../img/promo-bg-waves-mobile.jpg");
   }
 }
 

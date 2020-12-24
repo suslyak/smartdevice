@@ -17,9 +17,11 @@
     <div class="page-header__container">
       <div class="page-header__top-info">
         <a class="logo logo--white logo--reducing" aria-label="Логотип Smart Device">
-          <svg width="202" height="52">
-            <use xlink:href="img/sprite_auto.svg#icon-logo-white"></use>
-          </svg>
+          <picture>
+            <source srcset="img/logo-white.webp 1x, img/logo-white@2x.webp 2x" type="image/webp">
+            <!-- 1х: 202px; 2x:404px -->
+            <img src="img/logo-white.png" alt="стилизованный мозг из микросхемных дорожек" srcset="img/logo-white.png 1x, img/logo-white@2x.png 2x" width="202" height="52">
+          </picture>
         </a>
         <ul class="page-header__contact-methods">
           <li>
@@ -52,7 +54,9 @@
           <use xlink:href="img/sprite_auto.svg#icon-rectangles-figure"></use>
         </svg>
         <picture>
-          <source srcset="img/promo-bg-chip.webp 1x, img/promo-bg-chip@2x.webp 2x" type="image/webp">
+          <source media="(min-width: 1024px)" srcset="img/promo-bg-chip.webp 1x, img/promo-bg-chip@2x.webp 2x" type="image/webp">
+          <source media="(min-width: 768px)" srcset="img/promo-bg-chip-tablet.webp 1x, img/promo-bg-chip-tablet@2x.webp 2x" type="image/webp">
+          <source srcset="img/promo-bg-chip-mobile.webp 1x, img/promo-bg-chip-mobile@2x.webp 2x" type="image/webp">
           <!-- 1х: 705px; 2x:1410px -->
           <img src="img/promo-bg-chip.png" alt="набор печатных плат" srcset="img/promo-bg-chip.png 1x, img/promo-bg-chip@2x.png 2x" width="705" height="515">
         </picture>
@@ -128,9 +132,9 @@
           <li class="services__services-list-item">
             <div class="services__picture">
               <picture>
-                <source srcset="img/1n.webp 1x, img/1n@2x.webp 2x" type="image/webp">
+                <source srcset="img/1.webp 1x, img/1@2x.webp 2x" type="image/webp">
                 <!-- 1х: 2141px; 2x:4282px -->
-                <img src="img/1n.png" alt="печатная плата на конвеере" srcset="img/1n.png 1x, img/1n@2x.png 2x" width="2141" height="1428">
+                <img src="img/1.jpg" alt="печатная плата на конвеере" srcset="img/1.jpg 1x, img/1@2x.jpg 2x" width="2141" height="1428">
               </picture>
             </div>
             <a href="#" class="services__service">
@@ -142,7 +146,7 @@
               <picture>
                 <source srcset="img/2.webp 1x, img/2@2x.webp 2x" type="image/webp">
                 <!-- 1х: 1970px; 2x:3940px -->
-                <img src="img/2.png" alt="чип приваривается к плате" srcset="img/2.png 1x, img/2@2x.png 2x" width="1970" height="1313">
+                <img src="img/2.jpg" alt="чип приваривается к плате" srcset="img/2.jpg 1x, img/2@2x.jpg 2x" width="1970" height="1313">
               </picture>
             </div>
             <a href="#" class="services__service">
@@ -153,8 +157,8 @@
             <div class="services__picture">
               <picture>
                 <source srcset="img/3.webp 1x, img/3@2x.webp 2x" type="image/webp">
-                <!-- 1х: 1206px; 2x:2412px -->
-                <img src="img/3.png" alt="диодная лента" srcset="img/3.png 1x, img/3@2x.png 2x" width="1206" height="1206">
+                <!-- 1х: 1208px; 2x:2416px -->
+                <img src="img/3.jpg" alt="диодная лента" srcset="img/3.png 1x, img/3@2x.jpg 2x" width="1208" height="1206">
               </picture>
             </div>
             <a href="#" class="services__service">
@@ -193,9 +197,11 @@
     <div class="page-footer__container">
       <div class="page-footer__head-block">
         <a class="logo" aria-label="Логотип Smart Device">
-          <svg width="216" height="52">
-            <use xlink:href="img/sprite_auto.svg#icon-logo-black"></use>
-          </svg>
+          <picture>
+            <source srcset="img/logo-black.webp 1x, img/logo-black@2x.webp 2x" type="image/webp">
+            <!-- 1х: 216px; 2x:432px -->
+            <img src="img/logo-black.png" alt="стилизованный мозг из микросхемных дорожек" srcset="img/logo-black.png 1x, img/logo-black@2x.png 2x" width="216" height="52">
+          </picture>
         </a>
         <span class="page-footer__est">1999-2018 SD Service Devices</span>
         <ul class="page-footer__social-links">
@@ -223,10 +229,10 @@
         </ul>
       </div>
       <nav class="page-footer__menu">
-        <span class="page-footer__accordion-toggle" role="button">
+        <div class="page-footer__accordion-toggle" role="button">
           <h3>Разделы сайта</h3>
           <span class="page-footer__accordion-indicator"></span>
-        </span>
+        </div>
         <div class="page-footer__info-container page-footer__info-container--no-js">
           <ul class="page-footer__navigation">
             <li class="page-footer__menulink"><a href="#">О компании</a></li>
@@ -242,10 +248,10 @@
         </div>
       </nav>
       <div class="page-footer__office">
-        <span class="page-footer__accordion-toggle" role="button">
+        <div class="page-footer__accordion-toggle" role="button">
           <h3>Наш офис</h3>
           <span class="page-footer__accordion-indicator"></span>
-        </span>
+        </div>
         <div class="page-footer__info-container page-footer__info-container--no-js">
           <p>
           г. Мытищи, Олимпийский проспект, д.10
